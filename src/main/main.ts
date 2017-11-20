@@ -1,15 +1,17 @@
 import {app} from 'electron';
 
 import {createMainWindow, MainWindow} from "./createMainWindow";
+import {createFileManager, FileManager} from "./createFileManager";
 
 import {ipcMain} from "electron";
 import {show_open_file_dialog} from "./showOpenFileDialog";
 
 let mainWindow: MainWindow | null;
-
+let fileManger: FileManager;
 
 app.on('ready', () => {
   mainWindow = createMainWindow();
+  fileManger = createFileManager();
 });
 
 
