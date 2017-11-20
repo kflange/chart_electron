@@ -3,6 +3,7 @@ import * as path from 'path';
 import * as url from 'url';
 
 import {ipcMain} from "electron";
+import {show_open_file_dialog} from "./showOpenFileDialog";
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -59,4 +60,5 @@ app.on('activate', () => {
 
 ipcMain.on("open-file-dialog", (event: Event) => {
   console.log("openFile");
+  show_open_file_dialog();
 });
