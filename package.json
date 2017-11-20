@@ -27,5 +27,8 @@
     "spectron": "^3.7.2",
     "ts-loader": "^3.1.1",
     "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "spectre.css": "^0.4.5"
   }
 }
