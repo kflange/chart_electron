@@ -2,8 +2,12 @@ itemlist
   h3 { this.title }
 
   ul
-    li apple
-    li orange
+    li(each="{ items }") { title }
+
 
   script.
     this.title = "ITEM LIST";
+    this.items = [
+     {title: "apple"},
+     {title: "orange"},
+    ]
