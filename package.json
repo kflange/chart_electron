@@ -20,6 +20,7 @@
   "devDependencies": {
     "electron": "1.7.9",
     "mocha": "^4.0.1",
+    "riot": "^3.7.4",
     "spectron": "^3.7.2"
   }
 }
