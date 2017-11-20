@@ -30,6 +30,7 @@
     "webpack": "^3.8.1"
   },
   "dependencies": {
+    "chart.js": "^2.7.1",
     "spectre.css": "^0.4.5"
   }
 }
