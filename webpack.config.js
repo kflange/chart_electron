@@ -31,6 +31,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'riot-tag-loader',
         options: {
+          template: "pug",
           // hot: true,
           // debug: true
         }
