@@ -1,12 +1,10 @@
-<button-open-file>
-  <button class="btn" onclick={ clickOpenFileButton }>open</button>
+button-open-file
+  button(class="btn" onclick="{ clickOpenFileButton }") open
 
-  <script>
+  script.
     import {ipcRenderer} from "electron";
 
     clickOpenFileButton() {
       console.log("clicked");
       ipcRenderer.send("open-file-dialog");
     }
-  </script>
-</button-open-file>

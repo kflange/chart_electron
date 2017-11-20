@@ -22,6 +22,7 @@
   "devDependencies": {
     "electron": "1.7.9",
     "mocha": "^4.0.1",
+    "pug": "^2.0.0-rc.4",
     "riot": "^3.7.4",
     "riot-tag-loader": "^1.0.0",
     "spectron": "^3.7.2",

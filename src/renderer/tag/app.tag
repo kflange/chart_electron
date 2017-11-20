@@ -1,4 +1,3 @@
-<app>
-  <hello></hello>
-  <button-open-file></button-open-file>
-</app>
+app
+  hello
+  button-open-file
