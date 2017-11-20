@@ -4,6 +4,7 @@
   "description": "electron with Chart.js, Riot, typescript",
   "main": "./dist/main.js",
   "scripts": {
+    "build": "./node_modules/.bin/webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,7 @@
     "riot": "^3.7.4",
     "riot-tag-loader": "^1.0.0",
     "spectron": "^3.7.2",
+    "ts-loader": "^3.1.1",
     "webpack": "^3.8.1"
   }
 }
