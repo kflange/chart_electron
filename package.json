@@ -2,9 +2,10 @@
   "name": "chart_electron",
   "version": "1.0.0",
   "description": "electron with Chart.js, Riot, typescript",
-  "main": "./dist/main.js",
+  "main": "./dist/main/main.js",
   "scripts": {
-    "build": "./node_modules/.bin/webpack",
+    "start": "electron .",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
