@@ -2,19 +2,28 @@ mychart
   p mychart
   canvas(ref="myChart" id="myChart" width="400" height="400")
 
+  style(scoped).
+    :scope {
+      display: inline-block;
+      width: 100%;
+    }
+
   script.
-    import Chart from "chart.js";
-    // Chart = require("chart.js").Chart;
-
     this.on("mount", () => {
-      console.log("on");
+      drawChart();
+    });
 
-      let ctx = this.refs.myChart;  // .getContext("2d");
-      ctx.width = "400";
-      ctx.height = "400";
-      console.log(ctx);
+    this.on("loaded", (c) => {
+      this.on("unmount", () => {
+        c.destroy();
+      });
+    });
 
-      let myChart = new Chart(ctx, {
+
+    function drawChart() {
+      const ctx = this.root.document.querySelector("canvas").getContext("2d");
+
+      const myChart = new Chart(ctx, {
         type: "line",
         data:{
           labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -31,5 +40,4 @@ mychart
           ]
         }
       });
-      riot.update();
-    });
+    }
