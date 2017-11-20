@@ -1,10 +1,12 @@
 let webpack = require('webpack');
 
 module.exports = {
-  entry: './src/renderer/app.js',
+  entry: {
+    "renderer/app": './src/renderer/app.js'
+  },
   output: {
-    path: __dirname + '/dist/renderer',
-    filename: 'app.js'
+    path: __dirname + '/dist',
+    filename: '[name].js'
   },
   module : {
     rules : [
