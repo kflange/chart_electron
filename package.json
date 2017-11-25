@@ -2,10 +2,16 @@
   "name": "chart_electron",
   "version": "1.0.0",
   "description": "electron with Chart.js, Riot, typescript",
-  "main": "./dist/main/main.js",
+  "main": ".tmp/main/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "webpack",
+    "copy:dist": "cpx \"dist/js/main/*\" .tmp/main && cpx \"dist/js/renderer/*\" .tmp/renderer",
+    "copy:resources": "cpx \"prod_resources/**/*\" dist",
+    "copy:css": "cpx \"node_modules/spectre.css/dist/spectre.min.css\" dist/css",
+    "copy:chart.js": "cpx \"node_modules/chart.js/dist/Chart.min.js\" dist/js",
+    "prebundle": "npm run copy:resources && npm run copy:css && npm run copy:chart.js",
+    "bundle": "webpack",
+    "package": "npm run bundle && electron-packager dist \"ElectronChart\" --platform=linux --arch=x64 --out=release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,7 +26,9 @@
   },
   "homepage": "https://github.com/kflange/chart_electron#readme",
   "devDependencies": {
+    "cpx": "^1.5.0",
     "electron": "1.7.9",
+    "electron-packager": "^10.1.0",
     "mocha": "^4.0.1",
     "pug": "^2.0.0-rc.4",
     "riot": "^3.7.4",
