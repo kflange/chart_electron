@@ -12,6 +12,11 @@
   Chrome <script>document.write(process.versions.chrome)</script>,
   and Electron <script>document.write(process.versions.electron)</script>.
   <app></app>
-  <script>require("js/renderer/app.js")</script>
+  <src="js/renderer/app.js"></script>
+  <script>
+    const riot = require("riot");
+    require("./js/renderer/app.js");
+    riot.mount('*');
+  </script>
 </body>
 </html>
