@@ -5,7 +5,11 @@
   "main": "./dist/main/main.js",
   "scripts": {
     "start": "electron .",
-    "build": "webpack",
+    "copy:resources": "cpx \"prod_resources/**/*\" dist",
+    "copy:css": "cpx \"node_modules/spectre.css/dist/spectre.min.css\" dist/css",
+    "copy:chart.js": "cpx \"node_modules/chart.js/dist/Chart.min.js\" dist/js",
+    "prebundle": "npm run copy:resources && npm run copy:css && npm run copy:chart.js",
+    "bundle": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,6 +24,7 @@
   },
   "homepage": "https://github.com/kflange/chart_electron#readme",
   "devDependencies": {
+    "cpx": "^1.5.0",
     "electron": "1.7.9",
     "mocha": "^4.0.1",
     "pug": "^2.0.0-rc.4",
