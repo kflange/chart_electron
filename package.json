@@ -7,10 +7,9 @@
     "start": "electron .",
     "copy:resources": "cpx \"prod_resources/**/*\" dist",
     "copy:css": "cpx \"node_modules/spectre.css/dist/spectre.min.css\" dist/css",
-    "copy:riot.js": "cpx \"node_modules/riot/riot.min.js\" dist/js",
     "copy:chart.js": "cpx \"node_modules/chart.js/dist/Chart.min.js\" dist/js",
-    "prebundle": "npm run copy:resources && npm run copy:css && npm run copy:chart.js && npm run copy:riot.js",
-    "bundle": "riot --template=pug src/renderer/tag dist/renderer/app.js",
+    "prebundle": "npm run copy:resources && npm run copy:css && npm run copy:chart.js",
+    "bundle": "webpack",
     "package": "npm run bundle && electron-packager dist \"ElectronChart\" --platform=linux --arch=x64 --out=release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
