@@ -1,6 +1,8 @@
 const Application = require("spectron").Application;
 const electron = require("electron");
 const path = require("path");
+const assert = require("assert");
+
 
 const app = new Application({
   path: electron,
@@ -8,9 +10,22 @@ const app = new Application({
 });
 
 
-app.start()
-  .then(() => app.client.getWindowCount())
-  .then((count) => {
-    console.log((count === 1) ?  "success test :)" : "failed test :(");
-   app.stop();
+describe("アプリケーションの起動テスト", function() {
+  this.timeout(10000);
+
+
+  beforeEach(function() {
+    return app.start();
   });
+
+
+  afterEach(function() {
+    return app.stop();
+  });
+
+
+  it("output a window", function() {
+    return app.client.getWindowCount()
+      .then((count) => assert.equal(count, 1));
+  });
+});
