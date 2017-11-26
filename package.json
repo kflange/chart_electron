@@ -12,7 +12,7 @@
     "prebundle": "npm run copy:resources && npm run copy:css && npm run copy:chart.js",
     "bundle": "webpack",
     "package": "npm run bundle && electron-packager dist \"ElectronChart\" --platform=linux --arch=x64 --out=release",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node test/launch_test.js"
   },
   "repository": {
     "type": "git",
