@@ -1,0 +1,9 @@
+{
+  "name": "chart_electron",
+  "productName": "ChartElectron",
+  "version": "1.0.0",
+  "description": "electron with Chart.js, Riot, typescript",
+  "main": "js/main/main.js",
+  "author": "kflange"
+}
+
