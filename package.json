@@ -27,8 +27,8 @@
   "homepage": "https://github.com/kflange/chart_electron#readme",
   "devDependencies": {
     "cpx": "^1.5.0",
-    "electron": "1.7.9",
-    "electron-packager": "^10.1.0",
+    "electron": "^3.0.3",
+    "electron-packager": "^12.2.0",
     "mocha": "^4.0.1",
     "pug": "^2.0.0-rc.4",
     "riot": "^3.7.4",
